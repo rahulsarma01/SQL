@@ -32,6 +32,8 @@ Tools used: Google Bigquery
 Task 2: Show all the information about only those customers who purchased `Product A' only
 
 ```sql
+  
+  -- select all data where product name is A
   SELECT *
   FROM symbolic-truth-379604.bellabeat.sales
   WHERE product_name = 'Product A'
@@ -46,6 +48,81 @@ Task 2: Show all the information about only those customers who purchased `Produ
 LEVEL 2
 
 Task: Use SQL JOINS to Combine Multiple Tables into a New Table
+
+Below, I join two tables within the warehouse_orders dataset.
+
+
+![p01](https://user-images.githubusercontent.com/113444489/231931590-43baf8b7-3b32-4925-9b4f-f051ae169041.png)
+
+
+Tools used: `Google Bigquery`
+
+```sql
+  
+  -- order table
+  
+  WITH order_cte AS (
+  SELECT *
+  FROM symbolic-truth-379604.warehouse_orders.order_table
+  WHERE order_date > '2019-01-01'
+  ),
+  
+  -- warehouse table
+  
+  warehouse_cte AS (
+  SELECT warehouse_id, employee_total
+  FROM symbolic-truth-379604.warehouse_orders.warehouse_table
+  )
+  
+  -- join both tables
+  
+  SELECT order_cte.*, warehouse_cte.employee_total
+  FROM order_cte
+  LEFT JOIN warehouse_cte
+  ON order_cte.warehouse_id = warehouse_cte.warehouse_id;
+```
+
+![p02](https://user-images.githubusercontent.com/113444489/231931898-cd340ee3-0982-4331-89a4-db6b5086b1ca.png)
+
+
+LEVEL 3
+
+TASK: Create one or more views — with output
+
+```sql
+    SELECT * FROM Products
+```
+
+![p001](https://user-images.githubusercontent.com/113444489/231936887-5a66059e-2d65-4c0a-873f-6cd0e352fac6.png)
+
+Let's create a view for products above average price
+
+```sql
+    
+    -- create a view
+    
+    CREATE VIEW Products_above_average_price AS
+    SELECT ProductName, Price
+    FROM Products
+    WHERE Price > (SELECT AVG(Price) FROM Products);
+```
+
+```sql
+    
+    -- query from view
+    
+    SELECT *
+    FROM Products_above_average_price
+ ```
+ 
+ ![p002](https://user-images.githubusercontent.com/113444489/231937659-ee7ac805-ce61-4b61-8c64-e74f1afd0994.png)
+
+
+
+LEVEL 4
+
+TASK: Write a SQL script
+
 
 
 
