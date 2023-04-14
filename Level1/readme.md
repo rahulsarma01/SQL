@@ -121,7 +121,45 @@ Let's create a view for products above average price
 
 LEVEL 4
 
-TASK: Write a SQL script
+TASK: Write a SQL script that should include some of these elements:
+
+- Variable declarations for values used repeatedly
+- Dynamic filtering, i.e. using CURRENT_DATE() instead of a STRING DATE
+- In-line comments to explain the flow of execution
+- Proper documentation
+
+Question: write a sql script that shows the number of orders that were deleted( placed more than 90 days ago) 
+
+```sql
+
+  -- This script deletes all orders that were placed more than 90 days ago.
+  -- It uses a variable to store the cutoff date and dynamic filtering with CURRENT_DATE().
+  -- The script is properly documented with comments to explain each step.
+
+  -- Declare a variable to store the cutoff date
+     DECLARE @cutoff_date DATE;
+
+  -- Set the cutoff date to 90 days ago from the current date
+     SET @cutoff_date = DATEADD(day, -90, CURRENT_DATE());
+
+  -- Delete orders that were placed before the cutoff date
+     DELETE FROM orders
+     WHERE order_date < @cutoff_date;
+
+  -- Display the number of orders that were deleted
+     SELECT COUNT(*) AS num_deleted
+     FROM orders
+     WHERE order_date < @cutoff_date;
+```
+
+|num_deleted|
+|---|
+|51|
+ 
+ 
+LEVEL 5
+
+Create a Dashboard
 
 
 
