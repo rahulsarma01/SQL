@@ -1,14 +1,13 @@
-Welcome to the very first level of my sql game!
+![SQL WITH RAHUL](https://user-images.githubusercontent.com/113444489/233425026-a6e4da71-90e8-4423-86ac-743e9f54257c.png)
+![Untitled design](https://user-images.githubusercontent.com/113444489/233426320-208a7a86-2bf7-4104-9a3e-c6049f15056b.png)
 
-Level 1
 
-Task 1: Ingest a csv, create a table, and load data
+📌 Ingest a csv, create a table, and load data
 
-Tools used: Google Bigquery
 
 ```sql 
   
-  -- Create the sales table 
+  -- Create a sales table 
   DROP TABLE IF EXISTS symbolic-truth-379604.bellabeat.sales;
   CREATE TABLE symbolic-truth-379604.bellabeat.sales (
     sale_id INT64 NOT NULL,
@@ -29,7 +28,7 @@ Tools used: Google Bigquery
     (5, '2022-01-05', 'Product B', 50.00, 2, 'E');
 ```
 
-Task 2: Show all the information about only those customers who purchased `Product A' only
+📌 Show all the information about only those customers who purchased `Product A' only
 
 ```sql
   
@@ -42,20 +41,17 @@ Task 2: Show all the information about only those customers who purchased `Produ
 ![a1](https://user-images.githubusercontent.com/113444489/231825869-e7ec90ea-f987-4169-9497-152d570b604d.png)
 
 
---
+
+![Untitled design (1)](https://user-images.githubusercontent.com/113444489/233427941-297030ab-88b8-4ead-a7d2-b7bd6d1b3ede.png)
 
 
-LEVEL 2
-
-Task: Use SQL JOINS to Combine Multiple Tables into a New Table
+📌 Use SQL JOINS to Combine Multiple Tables into a New Table
 
 Below, I join two tables within the warehouse_orders dataset.
 
 
 ![p01](https://user-images.githubusercontent.com/113444489/231931590-43baf8b7-3b32-4925-9b4f-f051ae169041.png)
 
-
-Tools used: `Google Bigquery`
 
 ```sql
   
@@ -85,9 +81,10 @@ Tools used: `Google Bigquery`
 ![p02](https://user-images.githubusercontent.com/113444489/231931898-cd340ee3-0982-4331-89a4-db6b5086b1ca.png)
 
 
-LEVEL 3
+![Untitled design (2)](https://user-images.githubusercontent.com/113444489/233427982-1b72a0b6-43b7-4a0d-b2bd-3dd8bd3f0255.png)
 
-TASK: Create one or more views — with output
+
+📌 Create one or more views — with output
 
 ```sql
     SELECT * FROM Products
@@ -118,17 +115,18 @@ Let's create a view for products above average price
  ![p002](https://user-images.githubusercontent.com/113444489/231937659-ee7ac805-ce61-4b61-8c64-e74f1afd0994.png)
 
 
+![LEVEL 4](https://user-images.githubusercontent.com/113444489/233428016-99b4e888-9855-4a8e-b256-4e28747ea02c.png)
 
-LEVEL 4
 
-TASK: Write a SQL script that should include some of these elements:
+
+📌 Write a SQL script that should include some of these elements:
 
 - Variable declarations for values used repeatedly
 - Dynamic filtering, i.e. using CURRENT_DATE() instead of a STRING DATE
 - In-line comments to explain the flow of execution
 - Proper documentation
 
-Question: write a sql script that shows the number of orders that were deleted( placed more than 90 days ago) 
+📌 write a sql script that shows the number of orders that were deleted( placed more than 90 days ago) 
 
 ```sql
 
@@ -157,9 +155,10 @@ Question: write a sql script that shows the number of orders that were deleted( 
 |51|
  
  
-LEVEL 5
 
-Create a Dashboard
+![LEVEL 4 (1)](https://user-images.githubusercontent.com/113444489/233428050-f473f513-b816-4dfe-a2c9-c9bfe96f28e1.png)
+
+📌 Create a Dashboard
 
 
 
